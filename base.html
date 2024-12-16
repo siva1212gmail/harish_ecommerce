@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Agu+Display&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXhW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <style>
+        body{
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+        }
+
+        .mainsss{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            height:100vh;
+           
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+            scrollbar-width: none;
+          
+        }
+
+        .mainss::-webkit-scrollbar {
+            display: none; /* Set to desired width */
+        }
+
+        .banner_div{
+           position:relative;
+            margin-top: 80px;
+            margin-bottom: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner{
+           position: absolute;
+            width: 99%;
+            height: 90px;
+            display: block;
+           
+        }
+        
+
+        nav {
+            background-color: #343a40;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .main {
+            position: relative; 
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 280px;
+            width: 160px;
+            overflow: hidden;
+            margin: auto;
+            margin-top: 15px;
+        }
+       
+
+        .main:hover {
+            transform: translateY(-5px);
+            border: 2px solid gold;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+       
+
+        .inner_img {
+            position: relative;
+            margin-top: 10px;
+            height: 160px;
+            width: 100%;
+            object-fit: cover;
+            border-bottom: 1px solid #ddd;
+            border-right: 5px solid rgb(118, 191, 211);
+            object-fit:contain
+                }
+
+        .main_p3 {
+            font-size: 10px;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #343a40;
+            text-align: center;
+        }
+
+        .main_p2 {
+            font-size: 10px;
+            color: #6c757d;
+           margin-top: -5px;
+           text-align: center;
+            padding: 0 10px;
+        }
+
+        .main_button {
+            background-color: #343a40;
+            color: white;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 10px;
+            display: block;
+            margin: 10px auto;
+            width: 80%;
+            transition: background-color 0.3s ease;
+        }
+
+        .main_button:hover {
+            background-color: #495057;
+        }
+
+        .main_button a {
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+
+        .main_row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 20px; /* Add some space between items */
+        }
+.banner_div span:nth-child(2){
+    position: absolute;
+    color:#ff0000;
+    ; /* White text */
+    font-family: "Agu Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "MORF" 0;
+    font-size: 11px; /* Slightly larger text for emphasis */
+    text-transform: uppercase; /* Optional: Makes the text more impactful */
+    letter-spacing: 1px; /* Adds slight spacing for clarity */
+    margin-top: -30px;
+  
+
+}
+
+
+.banner_div span:nth-child(3){
+    position: absolute;
+    color:#ff0000;
+    ; /* White text */
+    font-family: "Agu Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "MORF" 0;
+    font-size: 14px; /* Slightly larger text for emphasis */
+    text-transform: uppercase; /* Optional: Makes the text more impactful */
+    letter-spacing: 1px; /* Adds slight spacing for clarity */
+   margin-top: 5px;
+  
+   
+   
+
+}
+.banner_div span:nth-child(4){
+    position: relative;
+    display: none;
+    
+
+}
+
+
+body{
+
+scroll-behavior: smooth;
+scrollbar-width: 0px;
+}
+
+body::-webkit-scrollbar {
+display: none
+;}
+
+.innersearch{
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.product_site{
+
+    position:absolute;
+    margin-top: -26.5px;
+   border-bottom-right-radius: 5px;
+   border-top-right-radius: 5px;
+   background-color:#e7f3ff;
+   color:black;
+   padding: 2px 3px;
+   padding-right: 10px;
+}
+
+
+
+.prod_offer{
+
+    position:absolute; 
+    margin-top: -175.5px;
+    margin-left: 111px;
+color: white;
+ border-top-right-radius: 10px;
+    font-size: 12px;
+    padding: 5px;
+}
+.hide_desc{
+    display: none;
+}
+.wishlist{
+    position: absolute;
+    margin-top: -25px;
+    margin-left: 135px;
+}
+
+.wishlist i{
+
+   font-size: 13px;
+    cursor: pointer;
+   
+    padding: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.563); /* Black border */
+    
+    border-radius: 50%; /* Rounded border */
+    background-color: white; /* White background */
+    color: rgba(0, 0, 0, 0.574); /* Default heart color */
+    transition: color 0.3s, background-color 0.3s;
+}
+/*Light Beige: #f5f5dc
+A warm, soft beige that feels gentle and inviting.
+
+Soft Yellow: #fff8dc
+A light, creamy yellow for a warm and cheerful look.
+
+Pale Blue: #e7f3ff
+A calming, light blue that adds a subtle cool contrast.
+
+Mint Green: #f0fff0
+A fresh, soft green tone for a clean, natural feel.
+
+Blush Pink: #fff0f5
+A delicate, light pink that gives a warm and friendly touch.
+
+Lavender Mist: #f4f0ff
+A pale lavender that is soft and slightly sophisticated.
+
+Champagne: #f7e7ce  */
+
+
+    </style>
+    <!-- Font Awesome CDN -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    
+    <div class="body">
+   <nav>Harish broo</nav>
+   <div class="banner_div" >
+   <span>best deal online on smart watches</span>
+   <span>up to 80% offer</span>
+   <span>click</span>
+   
+</div>
+<div  class="innersearch">
+    <input type="text" class="search" placeholder="search by category">
+</div>
+
+   <div class="container">
+       <div class="mainsss" >
+
+
+
+        <div class="main" id="9" data-mainid="{{prod.id}}" data-id="{{prod.product_id}}" draggable="true" id-categart="{{prod.product_name}}" >
+            
+            <img class="inner_img" src="https://rukminim2.flixcart.com/image/612/612/km82d8w0/gaming-accessory-kit/performance-gaming-kit/5/b/y/pack-of-combo-sensored-r11-trigger-red-black-with-highly-original-imagf6jgxty7rx7n.jpeg?q=70" alt="Product Image">
+            <span class="prod_offer" >30% off</span>
+            <span class="wishlist" ><i class="fa-regular fa-heart"></i></span>
+            <span class="product_site" >Flipkart</span>
+            <p class="main_p3">Viraan R11 metal PUBG Trigger Mobile Game</p>
+            
+            <p class="main_p2">Fortnite Phone Gamepad Controller Gaming Joystick</p>
+            <button class="main_button">
+                <a href="https://www.flipkart.com/viraan-r11-metal-pubg-trigger-mobile-game-fortnite-phone-gamepad-controller-gaming-joystick-fire-button-shooter-accessory-kit/p/itm5aecb937b354d?pid=ACCG8RRGYGDVBNGU&lid=LSTACCG8RRGYGDVBNGUWPRXGY&marketplace=FLIPKART&store=4rr&srno=b_1_6&otracker=hp_rich_navigation_5_1.navigationCard.RICH_NAVIGATION_Electronics~Gaming_PK7I48M403OR&otracker1=hp_rich_navigation_PINNED_neo%2Fmerchandising_NA_NAV_EXPANDABLE_navigationCard_cc_5_L1_view-all&fm=organic&iid=en_bpu0BCWRcpV-1_-wra" target="_blank">Buy Now</a>
+            </button>
+        </div>
+        <div class="main" id="9" data-mainid="{{prod.id}}" data-id="{{prod.product_id}}" draggable="true" id-categart="{{prod.product_name}}" >
+            
+            <img class="inner_img" src="https://rukminim2.flixcart.com/image/612/612/km82d8w0/gaming-accessory-kit/performance-gaming-kit/5/b/y/pack-of-combo-sensored-r11-trigger-red-black-with-highly-original-imagf6jgxty7rx7n.jpeg?q=70" alt="Product Image">
+            <span class="prod_offer" style="background-color: #ff0000;" >30% off</span>
+            <span class="wishlist" ><i class="fa-regular fa-heart"></i></span>
+            <span class="product_site" >Flipkart</span>
+            <p class="main_p3">Viraan R11 metal PUBG Trigger Mobile Game</p>
+            
+            <p class="main_p2">Fortnite Phone Gamepad Controller Gaming Joystick</p>
+            <button class="main_button">
+                <a href="https://www.flipkart.com/viraan-r11-metal-pubg-trigger-mobile-game-fortnite-phone-gamepad-controller-gaming-joystick-fire-button-shooter-accessory-kit/p/itm5aecb937b354d?pid=ACCG8RRGYGDVBNGU&lid=LSTACCG8RRGYGDVBNGUWPRXGY&marketplace=FLIPKART&store=4rr&srno=b_1_6&otracker=hp_rich_navigation_5_1.navigationCard.RICH_NAVIGATION_Electronics~Gaming_PK7I48M403OR&otracker1=hp_rich_navigation_PINNED_neo%2Fmerchandising_NA_NAV_EXPANDABLE_navigationCard_cc_5_L1_view-all&fm=organic&iid=en_bpu0BCWRcpV-1_-wra" target="_blank">Buy Now</a>
+            </button>
+        </div>
+     
+    
+ 
+
+
+          
+       </div>
+   </div>
+</div>
+<script>
+
+
+
+
+    function save(id,name,image,offer,site,description,link,e){
+console.log(id,name,image,offer,site,description,link)
+event.target.style.backgroundColor = 'red';
+
+    let cart=JSON.parse(localStorage.getItem('cart'))||[];
+    let productExists = cart.some(product => product.id === id);
+
+
+   if (productExists) {
+       
+        alert('This item is already in your wishlist.');
+    } else {
+       
+        let product = {
+            id: id,
+            name: name,
+            image: image,
+            offer: offer,
+            site: site,
+            description: description,
+            link: link
+        };
+        cart.push(product);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert('Item added to your wishlist!');
+
+    }}
+
+
+function check(){
+    const all=document.querySelectorAll(".main")
+    
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    all.forEach((item)=>{
+        id=item.getAttribute("data-mainid")
+        const product_exist=cart.some(prod=>prod.id==id)
+        if(product_exist){
+            const wist=item.querySelector(".fa-regular")
+            wist.style.backgroundColor="red"
+        }
+    })
+}
+
+check()
+
+
+
+
+
+
+
+
+function full(id){
+   const off=document.getElementsByClassName(`of_discription_${id}`)[0]
+   const full=document.getElementsByClassName(`full_description_${id}`)[0]
+  if(off.classList.contains("hide_desc")){
+console.log("haii 1")
+
+    off.classList.remove("hide_desc")
+    full.classList.add("hide_desc")
+  }
+  else{
+    full.classList.remove("hide_desc")
+    off.classList.add("hide_desc")
+    console.log("haii 2")
+  }
+
+}
+
+  
+    const items = document.querySelectorAll(".main");
+
+let draggedItem = null;
+
+items.forEach(item => {addEventListenersToItem(item)})
+
+function addEventListenersToItem(item){
+    console.log("haii")
+    item.addEventListener("dragstart", (event) => {
+        draggedItem = event.target;
+        console.log(draggedItem) // Save the dragged item
+        event.dataTransfer.setData("text/plain", event.target.id);
+    });
+
+    // Allow dropping on other elements
+    item.addEventListener("dragover", (event) => {
+        event.preventDefault(); // Prevent default to allow drop
+    });
+
+    // Handle drop
+    item.addEventListener("drop", (event) => {
+        event.preventDefault();
+
+        const targetItem = event.target.closest(".main");
+        const draggedId = draggedItem.getAttribute("data-id");
+        
+        // Ensure we target the correct `.main` item
+        if (draggedItem && draggedItem !== targetItem) {
+            // Get parent container
+            const parent = targetItem.parentNode;
+             
+            // Find the positions of dragged and target items
+            //const draggedIndex = [...parent.children].indexOf(draggedItem);
+            //const targetIndex = [...parent.children].indexOf(targetItem);
+            //console.log(draggedIndex,targetIndex)
+            // Swap the elements in the DOM
+            //if (draggedIndex > targetIndex) {
+                //parent.insertBefore(draggedItem, targetItem);
+
+            //} else {
+
+                //parent.insertBefore(draggedItem, targetItem.nextSibling);
+            //}
+
+            // Swap their `data-id` attributes
+            const draggedClone = draggedItem.cloneNode(true);
+            const targetClone = targetItem.cloneNode(true);
+      
+            parent.replaceChild(draggedClone, targetItem);
+            parent.replaceChild(targetClone, draggedItem);
+
+            const targetId = targetItem.getAttribute("data-id");
+
+            
+            draggedClone.setAttribute("data-id", targetId);
+            targetClone.setAttribute("data-id", draggedId);
+            
+            addEventListenersToItem(draggedClone);
+            addEventListenersToItem(targetClone);
+            
+
+            // Send the updated order to the backend
+            const data = {
+                dragged_id: draggedId,
+                target_id: targetId,
+            };
+
+            fetch("/update_product_order/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": getCookie("csrftoken"), // Ensure CSRF protection for Django
+                },
+                body: JSON.stringify(data),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log("Order updated successfully:", data);
+                })
+                .catch(error => {
+                    console.error("Error updating order:", error);
+                });
+        }
+    });
+};
+
+// Helper function to get CSRF token for Django
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+        const cookies = document.cookie.split(";");
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.startsWith(name + "=")) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+   
+    
+
+
+
+
+
+const search=document.getElementsByClassName("search")[0]
+search.addEventListener("keyup",(e)=>{
+    console.log(":haii")
+    const main_elements=document.querySelectorAll(".main")
+   
+    const searchterm=e.target.value.toLowerCase()
+    main_elements.forEach(element=>{
+      const category=  element.getAttribute("id-categart")
+      console.log(category)
+if(category.toLowerCase().includes(searchterm)){
+    element.style.display=""
+}
+else{
+    element.style.display="none"
+}
+    })
+})
+
+</script>
+
+</body>
+</html>
