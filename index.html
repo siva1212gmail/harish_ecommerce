@@ -15,7 +15,15 @@
             scroll-behavior: smooth;
             scroll-snap-type: y mandatory;
             background-color: #EDEDED;
+            width: 100%;
+            overflow-x: hidden;
         }
+
+       
+            
+            body::-webkit-scrollbar {
+            display: none
+            ;}
 
         .mainsss{
             display: grid;
@@ -191,15 +199,7 @@
 
 
 
-body{
 
-scroll-behavior: smooth;
-scrollbar-width: 0px;
-}
-
-body::-webkit-scrollbar {
-display: none
-;}
 
 .innersearch{
 
@@ -285,7 +285,12 @@ box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     gap: 20px;
     width: 300px;
     border-radius: 40px;
+    cursor: grab;
     
+}
+.inner_single_tree.dragging {
+    opacity: 0.5;
+    background-color: #e0e0e0;
 }
 
 
@@ -419,17 +424,25 @@ width: 100vw;
         </div>
         
    <div class="tree_link">
-    <div class="inner_single_tree">
+    <div class="inner_single_tree" draggable="true">
     <img src="https://m.media-amazon.com/images/I/61y7S+YUTEL._SX679_.jpg" alt="">
-    <p>mydear.madurai</p>
+    <p>mydear.madurai 1</p>
 </div>
-<div class="inner_single_tree">
+<div class="inner_single_tree" draggable="true">
     <img src="https://m.media-amazon.com/images/I/61y7S+YUTEL._SX679_.jpg" alt="">
-    <p>harish_techy</p>
+    <p>mydear.boys 2</p>
 </div>
-<div class="inner_single_tree">
+<div class="inner_single_tree" draggable="true">
     <img src="https://m.media-amazon.com/images/I/61y7S+YUTEL._SX679_.jpg" alt="">
-    <p>cartoon.kaadhalan</p>
+    <p>ohdear.madurai 3</p>
+</div>
+<div class="inner_single_tree" draggable="true">
+    <img src="https://m.media-amazon.com/images/I/61y7S+YUTEL._SX679_.jpg" alt="">
+    <p>harish_techy 4</p>
+</div>
+<div class="inner_single_tree" draggable="true">
+    <img src="https://m.media-amazon.com/images/I/61y7S+YUTEL._SX679_.jpg" alt="">
+    <p>cartoon.kaadhalan 5</p>
 </div>
 </div>
    <div class="banner_div" >
@@ -821,6 +834,71 @@ else{
 }
     })
 })
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector(".tree_link");
+    let draggedElement = null;
+
+    // Add drag event listeners to all draggable elements
+    container.addEventListener("dragstart", (e) => {
+        if (e.target.classList.contains("inner_single_tree")) {
+            draggedElement = e.target;
+            e.target.classList.add("dragging");
+        }
+    });
+
+    container.addEventListener("dragend", (e) => {
+        if (e.target.classList.contains("inner_single_tree")) {
+            e.target.classList.remove("dragging");
+        }
+    });
+
+    container.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        const afterElement = getDragAfterElement(container, e.clientY);
+
+        if (afterElement === null) {
+            container.appendChild(draggedElement);
+        } else {
+            container.insertBefore(draggedElement, afterElement);
+        }
+    });
+
+    container.addEventListener("drop", async () => {
+        const newOrder = Array.from(container.children).map((child) => child.dataset.id);
+
+        // Update the backend with the new order
+        try {
+            await fetch('/update-order', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ order: newOrder })
+            });
+        } catch (err) {
+            console.error('Failed to update order:', err);
+        }
+    });
+
+    function getDragAfterElement(container, y) {
+        const draggableElements = [...container.querySelectorAll(".inner_single_tree:not(.dragging)")];
+
+        return draggableElements.reduce((closest, child) => {
+            const box = child.getBoundingClientRect();
+            const offset = y - box.top - box.height / 2;
+
+            if (offset < 0 && offset > closest.offset) {
+                return { offset: offset, element: child };
+            } else {
+                return closest;
+            }
+        }, { offset: Number.NEGATIVE_INFINITY }).element;
+    }
+});
+
+
+
+
 
 </script>
 
