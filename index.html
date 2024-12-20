@@ -18,13 +18,13 @@
             width: 100%;
             overflow-x: hidden;
         }
-
-       
+        
+        
             
             body::-webkit-scrollbar {
             display: none
             ;}
-
+        
         .mainsss{
             display: grid;
             grid-template-columns: repeat(2,1fr);
@@ -35,25 +35,25 @@
             scrollbar-width: none;
           
         }
-
+        
         .mainss::-webkit-scrollbar {
             display: none; /* Set to desired width */
         }
-
+        
         .banner_div{
            position:relative;
             margin-top: 80px;
             margin-bottom: 70px;
             display: flex;
-
+        
             justify-content: center;
             align-items: center;
         }
-
+        
         .banner{
            position: absolute;
            background: linear-gradient(to bottom, #8e9eab, #bfc0c1);
-
+        
             width: 100%;
             height: 90px;
             border-radius: 20px;
@@ -62,18 +62,13 @@
         }
          /*; */
         
-
-        nav {
-            background-color: #343a40;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-        }
-
+        
+        
+        
         .container {
             margin-top: 20px;
         }
-
+        
         .main {
             position: relative; 
             background-color: #ffffff;
@@ -86,43 +81,45 @@
             margin: auto;
             margin-top: 15px;
         }
-       
-
+        
+        
         .main:hover {
             transform: translateY(-5px);
             border: 2px solid gold;
+            height: auto;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
-
-       
-
+        
+        
+        
         .inner_img {
             position: relative;
             margin-top: 10px;
             height: 160px;
             width: 100%;
-            object-fit: cover;
+          
             border-bottom: 1px solid #ddd;
-            border-right: 5px solid rgb(118, 191, 211);
             object-fit:contain
                 }
-
+        
         .main_p3 {
             font-size: 10px;
+            width: 95%;
+            text-align: center;
             font-weight: bold;
             margin: 10px 0;
             color: #343a40;
             text-align: center;
         }
-
+        
         .main_p2 {
-            font-size: 10px;
+            font-size: 9px;
             color: #6c757d;
            margin-top: -5px;
            text-align: center;
             padding: 0 10px;
         }
-
+        
         .main_button {
             background-color: #343a40;
             color: white;
@@ -136,247 +133,343 @@
             width: 80%;
             transition: background-color 0.3s ease;
         }
-
+        
         .main_button:hover {
             background-color: #495057;
         }
-
+        
         .main_button a {
             text-decoration: none;
             color: white;
             display: block;
         }
-
+        
         .main_row {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-evenly;
             gap: 20px; /* Add some space between items */
         }
-.banner_div span:nth-child(2){
-    position: absolute;
-    color:white;
-    ; /* White text */
-  
-  font-optical-sizing: auto;
-  font-weight: 600;
-  
-  font-variation-settings:
-    "MORF" 0;
-    font-size: 13px; /* Slightly larger text for emphasis */
-    text-transform: uppercase; /* Optional: Makes the text more impactful */
-    letter-spacing: 1px; /* Adds slight spacing for clarity */
-    margin-top: -20px;
-  
-
-}
-
-
-.banner_div span:nth-child(3){
-    position: absolute;
-    color:white;
-    ; /* White text */
-    
-  font-optical-sizing: auto;
-  font-weight: 700;
- 
-  
-    font-size: 14px; /* Slightly larger text for emphasis */
-    text-transform: uppercase; /* Optional: Makes the text more impactful */
-    letter-spacing: 1px; /* Adds slight spacing for clarity */
-   margin-top: 20px;
-  
-   
-   
-
-}
-.banner_div span:nth-child(4){
-    position: relative;
-    display: none;
-    
-
-}
-
-
-
-
-
-.innersearch{
-
-display: flex;
-justify-content: center;
-align-items: center;
-
-}
-.product_site{
-
-    position:absolute;
-    margin-top: -26.5px;
-   border-bottom-right-radius: 5px;
-   border-top-right-radius: 5px;
-   background-color:#e7f3ff;
-   color:black;
-   padding: 2px 3px;
-   padding-right: 10px;
-}
-
-
-
-.prod_offer{
-
-    position:absolute; 
-    margin-top: -175.5px;
-    margin-left: 111px;
-color: white;
- border-top-right-radius: 10px;
-    font-size: 12px;
-    padding: 5px;
-}
-.hide_desc{
-    display: none;
-}
-.wishlist{
-    position: absolute;
-    margin-top: -25px;
-    margin-left: 135px;
-}
-
-.wishlist i{
-
-   font-size: 13px;
-    cursor: pointer;
-   
-    padding: 4px;
-    border: 1px solid rgba(0, 0, 0, 0.563); /* Black border */
-    
-    border-radius: 50%; /* Rounded border */
-    background-color: white; /* White background */
-    color: rgba(0, 0, 0, 0.574); /* Default heart color */
-    transition: color 0.3s, background-color 0.3s;
-}
-.tree_link {
-    margin-top: 50px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 20px;
-  
-}
-
-
-
-.tree_link img{
-
-width: 50px;
-height: 50px;
-border-radius: 50%;
-margin-top: 3px;
-margin-left: 10px;
-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-
-}
-
-
-.inner_single_tree{
-    display: flex;
-    background-color: #fbf5e5;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    gap: 20px;
-    width: 300px;
-    border-radius: 40px;
-    cursor: grab;
-    
-}
-.inner_single_tree.dragging {
-    opacity: 0.5;
-    background-color: #e0e0e0;
-}
-
-
-.inner_single_tree p{
-    font-size: 18px;
-    margin-left: 14px;
-   
-}
-
-.harish_img{
-    margin-top: 40px;
-    width: 100px;
-    border-radius: 50%;
-}
-
-.image_per{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.image_per p:nth-child(2){
-    font-size: 25px;
-    margin-top: -20px;
-    margin-left: 45px;
-}
-
-.insta_verified{
-    position:absolute;
-    width: 50px;
-    border-radius: 60%;    
-    margin-left: 113px;
-   
-    margin-top: -55px;
-}
-
-
-.instatag{
-    position: relative;
- 
-   font-size: 20px;
-
-}
-
-.instanem{
-  margin-top: -20px;
-  margin-bottom: -20px;
-}
-
-.colro_top{
-width: 100vw;
-    background: linear-gradient(to bottom,#cb356c,#bd403295);
-
-}
-.collab{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.inner_form{
-    height: 20px;
-    overflow-y: hidden;
-    background-color: #8e9eab;
-    padding:10px 20px;
-    border-radius: 10px;
-    margin-bottom: -20px;
-    cursor: pointer;
-    transition: 0.5s;
-}
-.colab_text{
-    text-align: center;
-    margin-top: -2px;
-}
-
-.form_height{
-    height: 170px;
-}
-
-.fa-solid {
-
-    margin-left: 10px;
-    text-align: center;
-}
+        .banner_div span:nth-child(2){
+        position: absolute;
+        color:white;
+        ; /* White text */
+        
+        font-optical-sizing: auto;
+        font-weight: 600;
+        
+        font-variation-settings:
+        "MORF" 0;
+        font-size: 13px; /* Slightly larger text for emphasis */
+        text-transform: uppercase; /* Optional: Makes the text more impactful */
+        letter-spacing: 1px; /* Adds slight spacing for clarity */
+        margin-top: -20px;
+        
+        
+        }
+        
+        
+        .banner_div span:nth-child(3){
+        position: absolute;
+        color:white;
+        ; /* White text */
+        
+        font-optical-sizing: auto;
+        font-weight: 700;
+        
+        
+        font-size: 14px; /* Slightly larger text for emphasis */
+        text-transform: uppercase; /* Optional: Makes the text more impactful */
+        letter-spacing: 1px; /* Adds slight spacing for clarity */
+        margin-top: 20px;
+        
+        
+        
+        
+        }
+        .banner_div span:nth-child(4){
+        position: relative;
+        display: none;
+        
+        
+        }
+        
+        
+        
+        
+        
+        .innersearch{
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        }
+        .product_site{
+        
+        position:absolute;
+        margin-top: -26.5px;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        background-color:#e7f3ff;
+        color:rgba(0, 0, 0, 0.678);
+        font-weight: 550;
+        text-transform: capitalize;
+        font-size: 15px;
+        padding: 2px 3px;
+        padding-right: 10px;
+        padding-left: 5px;
+        }
+        
+        
+        
+        .prod_offer{
+        
+        position:absolute; 
+        margin-top: -175.5px;
+        margin-left: 111px;
+        color: white;
+        border-top-right-radius: 10px;
+        font-size: 12px;
+        padding: 5px;
+        }
+        .hide_desc{
+        display: none;
+        }
+        .wishlist{
+        position: absolute;
+        margin-top: -25px;
+        margin-left: 135px;
+        }
+        
+        .wishlist i{
+        
+        font-size: 13px;
+        cursor: pointer;
+        
+        padding: 4px;
+        border: 1px solid rgba(0, 0, 0, 0.563); /* Black border */
+        
+        border-radius: 50%; /* Rounded border */
+        background-color: white; /* White background */
+        color: rgba(0, 0, 0, 0.574); /* Default heart color */
+        transition: color 0.3s, background-color 0.3s;
+        }
+        .tree_link {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        
+        }
+        #shareButton{
+        
+            margin-right: 25px;
+            margin-bottom: 19px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        
+        
+        .update_color{
+            
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            margin-left: 20px !important;
+            margin-top: 18px !important;
+        }
+        
+        /* .tree_link img{
+        
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-top: 3px;
+        margin-left: 10px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        
+        } */
+        
+        
+        .inner_single_tree{
+        display: flex;
+        background-color: #fbf5e5;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        gap: 20px;
+        width: 300px;
+        border-radius: 40px;
+        cursor: grab;
+        align-items: center;            /* Vertically center the content */
+        justify-content: space-between; /* Ensure that the text and icon are spaced apart */
+        
+        
+        }
+        .inner_single_tree.dragging {
+        opacity: 0.5;
+        background-color: #e0e0e0;
+        }
+        
+        
+        .inner_single_tree p{
+            flex-grow: 1;      /* Allow the text to take up available space */
+            margin: 0;
+            text-align: center;
+        
+        }
+        
+        .harish_img{
+        margin-top: 40px;
+        width: 100px;
+        border-radius: 50%;
+        }
+        .inner_single_tree img {
+            max-width: 50px;  /* Limit image size */
+            height: auto;
+            border-radius: 50%;
+            margin-left: 10px;
+          }
+        
+        .image_per{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
+        
+        .image_per p:nth-child(2){
+        font-size: 25px;
+        margin-top: -20px;
+        margin-left: 45px;
+        }
+        
+        .insta_verified{
+        position:absolute;
+        width: 50px;
+        border-radius: 60%;    
+        margin-left: 113px;
+        
+        margin-top: -55px;
+        }
+        
+        
+        .instatag{
+        position: relative;
+        
+        font-size: 20px;
+        
+        }
+        
+        .instanem{
+        margin-top: -20px;
+        margin-bottom: -20px;
+        }
+        
+        .colro_top{
+        width: 100vw;
+        background: linear-gradient(to bottom,#cb356c,#bd403295);
+        
+        }
+        .collab{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        }
+        
+        .inner_form{
+        height: 40px;
+        overflow-y: hidden;
+        
+        background-color: #8e9eab;
+        padding:10px 20px;
+        border-radius: 10px;
+        margin-bottom: -20px;
+        cursor: pointer;
+        transition: 0.5s;
+        }
+        .colab_text{
+        text-align: center;
+        margin-top: -2px;
+        }
+        
+        .form_height{
+        height: 250px;
+        }
+        
+        .fa-solid {
+        
+        margin-left: 10px;
+        text-align: center;
+        }
+        /* ---------------------------------dashbord css ------------------------------- */
+        
+        .dashbord{
+            margin-top: 20px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .prmosion_count{
+        
+            background-color:white;
+            padding: 20px;
+            color: rgb(21, 11, 11);
+            text-align: center;
+            display: flex;
+            gap: 10px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;    
+        }
+        
+        .prmosion_count div{
+            border-right: 1px solid rgba(0, 0, 0, 0.481);
+            padding: 10px;
+            
+        }
+        
+        .prmosion_count div p:nth-child(1){
+            
+           font-weight: 600;
+           color: rgba(0, 0, 0, 0.734);
+           text-transform: uppercase;
+            
+        }
+        
+        
+        #shareButton{
+        
+            margin-top: 20px !important;
+            margin-left: 35px !important;
+        }
+        
+        
+        
+        
+        .product_count div p:nth-child(1){
+            
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.734);
+            text-transform: uppercase;
+             
+         }
+        
+        .product_count{
+           
+            color: white;
+            background-color:white;
+            padding: 20px;
+            color: rgb(21, 11, 11);
+            text-align: center;
+            
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;    
+        
+        
+        }
 
     </style>
     <!-- Font Awesome CDN -->
@@ -428,23 +521,31 @@ width: 100vw;
     <div class="inner_single_tree" data-id="1" draggable="true">
     <img src="https://m.media-amazon.com/images/I/61y7S+YUTEL._SX679_.jpg" alt="">
     <p>mydear.madurai 1</p>
+    <i id="shareButton" class="fa-solid fa-ellipsis-vertical"></i>
+
 </div>
 <div class="inner_single_tree" data-id="2" draggable="true">
     <img src="https://m.media-amazon.com/images/I/61y7S+YUTEL._SX679_.jpg" alt="">
     <p>mydear.boys 2</p>
+    <i id="shareButton" class="fa-solid fa-ellipsis-vertical"></i>
+
 </div>
 <div class="inner_single_tree" data-id="3" draggable="true">
     <img src="https://m.media-amazon.com/images/I/61y7S+YUTEL._SX679_.jpg" alt="">
     <p>ohdear.madurai 3</p>
+    <i id="shareButton" class="fa-solid fa-ellipsis-vertical"></i>
+
 </div>
 <div class="inner_single_tree" data-id="4" draggable="true">
     <img src="https://m.media-amazon.com/images/I/61y7S+YUTEL._SX679_.jpg" alt="">
     <p>harish_techy 4</p>
+    <i id="shareButton" class="fa-solid fa-ellipsis-vertical"></i>
+
 </div>
 <div class="inner_single_tree" data-id="5" draggable="true">
     <img src="https://m.media-amazon.com/images/I/61y7S+YUTEL._SX679_.jpg" alt="">
     <p>cartoon.kaadhalan 5</p>
-    <button id="shareButton">Share</button>
+    <i id="shareButton" class="fa-solid fa-ellipsis-vertical"></i>
 </div>
 </div>
    <div class="banner_div" >
