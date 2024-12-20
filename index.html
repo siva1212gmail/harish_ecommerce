@@ -392,6 +392,7 @@ width: 100vw;
            <div class="instanem">
             <p class="instatag">harish_brooo </p>
             <img class="insta_verified" src="images/Untitled design (3).png" alt="">
+            
         </div>
         </div>
         <div class="collab">
@@ -424,25 +425,26 @@ width: 100vw;
         </div>
         
    <div class="tree_link">
-    <div class="inner_single_tree" draggable="true">
+    <div class="inner_single_tree" data-id="1" draggable="true">
     <img src="https://m.media-amazon.com/images/I/61y7S+YUTEL._SX679_.jpg" alt="">
     <p>mydear.madurai 1</p>
 </div>
-<div class="inner_single_tree" draggable="true">
+<div class="inner_single_tree" data-id="2" draggable="true">
     <img src="https://m.media-amazon.com/images/I/61y7S+YUTEL._SX679_.jpg" alt="">
     <p>mydear.boys 2</p>
 </div>
-<div class="inner_single_tree" draggable="true">
+<div class="inner_single_tree" data-id="3" draggable="true">
     <img src="https://m.media-amazon.com/images/I/61y7S+YUTEL._SX679_.jpg" alt="">
     <p>ohdear.madurai 3</p>
 </div>
-<div class="inner_single_tree" draggable="true">
+<div class="inner_single_tree" data-id="4" draggable="true">
     <img src="https://m.media-amazon.com/images/I/61y7S+YUTEL._SX679_.jpg" alt="">
     <p>harish_techy 4</p>
 </div>
-<div class="inner_single_tree" draggable="true">
+<div class="inner_single_tree" data-id="5" draggable="true">
     <img src="https://m.media-amazon.com/images/I/61y7S+YUTEL._SX679_.jpg" alt="">
     <p>cartoon.kaadhalan 5</p>
+    <button id="shareButton">Share</button>
 </div>
 </div>
    <div class="banner_div" >
@@ -624,15 +626,15 @@ width: 100vw;
 <script>
 function openform(event){
     
-console.log("haiii")
+
     const form=document.querySelector(".inner_form")
     if(form.classList.contains("form_height")){
     form.classList.remove("form_height")
-    console.log("Class removed!");
+   ;
     }
     else{
         form.classList.add("form_height") 
-        console.log("Class add!");
+     
     }
     
 }
@@ -640,7 +642,6 @@ console.log("haiii")
 
 
     function save(id,name,image,offer,site,description,link,e){
-console.log(id,name,image,offer,site,description,link)
 event.target.style.backgroundColor = 'red';
 
     let cart=JSON.parse(localStorage.getItem('cart'))||[];
@@ -692,10 +693,9 @@ check()
 
 
 function full(id){
-   const off=document.getElementsByClassName(`of_discription_${id}`)[0]
+   const off=document.getElementsByClassName(`of_discription_${id}`)[0]  
    const full=document.getElementsByClassName(`full_description_${id}`)[0]
   if(off.classList.contains("hide_desc")){
-console.log("haii 1")
 
     off.classList.remove("hide_desc")
     full.classList.add("hide_desc")
@@ -703,7 +703,6 @@ console.log("haii 1")
   else{
     full.classList.remove("hide_desc")
     off.classList.add("hide_desc")
-    console.log("haii 2")
   }
 
 }
@@ -716,10 +715,8 @@ let draggedItem = null;
 items.forEach(item => {addEventListenersToItem(item)})
 
 function addEventListenersToItem(item){
-    console.log("haii")
     item.addEventListener("dragstart", (event) => {
         draggedItem = event.target;
-        console.log(draggedItem) // Save the dragged item
         event.dataTransfer.setData("text/plain", event.target.id);
     });
 
@@ -786,7 +783,6 @@ function addEventListenersToItem(item){
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log("Order updated successfully:", data);
                 })
                 .catch(error => {
                     console.error("Error updating order:", error);
@@ -819,13 +815,11 @@ function getCookie(name) {
 
 const search=document.getElementsByClassName("search")[0]
 search.addEventListener("keyup",(e)=>{
-    console.log(":haii")
     const main_elements=document.querySelectorAll(".main")
    
     const searchterm=e.target.value.toLowerCase()
     main_elements.forEach(element=>{
       const category=  element.getAttribute("id-categart")
-      console.log(category)
 if(category.toLowerCase().includes(searchterm)){
     element.style.display=""
 }
@@ -836,11 +830,10 @@ else{
 })
 
 
+
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(".tree_link");
     let draggedElement = null;
-
-    // Add drag event listeners to all draggable elements
     container.addEventListener("dragstart", (e) => {
         if (e.target.classList.contains("inner_single_tree")) {
             draggedElement = e.target;
@@ -866,7 +859,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     container.addEventListener("drop", async () => {
-        const newOrder = Array.from(container.children).map((child) => child.dataset.id);
+        const newOrder = Array.from(container.children).map((child,index) => {index,child.dataset.id});
 
         // Update the backend with the new order
         try {
@@ -886,7 +879,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return draggableElements.reduce((closest, child) => {
             const box = child.getBoundingClientRect();
             const offset = y - box.top - box.height / 2;
-
             if (offset < 0 && offset > closest.offset) {
                 return { offset: offset, element: child };
             } else {
@@ -896,7 +888,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-
+document.getElementById('shareButton').addEventListener('click', function() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Check out this website!',
+        text: 'I found this amazing website, and I wanted to share it with you.',
+        url: window.location.href // Or a specific URL
+      })
+      .then(() => console.log('Shared successfully!'))
+      .catch((error) => console.log('Error sharing:', error));
+    } else {
+      alert('Web Share API is not supported on this browser.');
+    }
+  });
 
 
 
