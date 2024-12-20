@@ -264,13 +264,7 @@
         gap: 20px;
         
         }
-        #shareButton{
-        
-            margin-right: 25px;
-            margin-bottom: 19px;
-            font-size: 20px;
-            cursor: pointer;
-        }
+       
         
         
         
@@ -441,10 +435,12 @@
         }
         
         
-        #shareButton{
-        
-            margin-top: 20px !important;
-            margin-left: 35px !important;
+        .shareButton{
+
+            margin-right: 25px;
+            
+            font-size: 20px;
+            cursor: pointer;
         }
         
         
@@ -521,31 +517,31 @@
     <div class="inner_single_tree" data-id="1" draggable="true">
     <img src="https://m.media-amazon.com/images/I/61y7S+YUTEL._SX679_.jpg" alt="">
     <p>mydear.madurai 1</p>
-    <i id="shareButton" class="fa-solid fa-ellipsis-vertical"></i>
+    <i  class="fa-solid fa-ellipsis-vertical shareButton"></i>
 
 </div>
 <div class="inner_single_tree" data-id="2" draggable="true">
     <img src="https://m.media-amazon.com/images/I/61y7S+YUTEL._SX679_.jpg" alt="">
     <p>mydear.boys 2</p>
-    <i id="shareButton" class="fa-solid fa-ellipsis-vertical"></i>
+    <i  class="fa-solid fa-ellipsis-vertical shareButton"></i>
 
 </div>
 <div class="inner_single_tree" data-id="3" draggable="true">
     <img src="https://m.media-amazon.com/images/I/61y7S+YUTEL._SX679_.jpg" alt="">
     <p>ohdear.madurai 3</p>
-    <i id="shareButton" class="fa-solid fa-ellipsis-vertical"></i>
+    <i  class="fa-solid fa-ellipsis-vertical shareButton"></i>
 
 </div>
 <div class="inner_single_tree" data-id="4" draggable="true">
     <img src="https://m.media-amazon.com/images/I/61y7S+YUTEL._SX679_.jpg" alt="">
     <p>harish_techy 4</p>
-    <i id="shareButton" class="fa-solid fa-ellipsis-vertical"></i>
+    <i  class="fa-solid fa-ellipsis-vertical shareButton"></i>
 
 </div>
 <div class="inner_single_tree" data-id="5" draggable="true">
     <img src="https://m.media-amazon.com/images/I/61y7S+YUTEL._SX679_.jpg" alt="">
     <p>cartoon.kaadhalan 5</p>
-    <i id="shareButton" class="fa-solid fa-ellipsis-vertical"></i>
+    <i  class="fa-solid fa-ellipsis-vertical shareButton"></i>
 </div>
 </div>
    <div class="banner_div" >
@@ -989,19 +985,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-document.getElementById('shareButton').addEventListener('click', function() {
-    if (navigator.share) {
-      navigator.share({
-        title: 'Check out this website!',
-        text: 'I found this amazing website, and I wanted to share it with you.',
-        url: window.location.href // Or a specific URL
-      })
-      .then(() => console.log('Shared successfully!'))
-      .catch((error) => console.log('Error sharing:', error));
-    } else {
-      alert('Web Share API is not supported on this browser.');
-    }
-  });
+const shares=document.querySelectorAll('.shareButton')
+
+shares.forEach(share=>{
+    console.log(share)
+    share.addEventListener('click', function() {
+        if (navigator.share) {
+          navigator.share({
+            title: 'Check out this website!',
+            text: 'I found this amazing website, and I wanted to share it with you.',
+            url: window.location.href // Or a specific URL
+          })
+          .then(() => console.log('Shared successfully!'))
+          .catch((error) => console.log('Error sharing:', error));
+        } else {
+          alert('Web Share API is not supported on this browser.');
+        }
+      }
+)});
 
 
 
